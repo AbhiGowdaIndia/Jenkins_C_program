@@ -1,4 +1,4 @@
 main(){
-factorial()
-biggest_of_two()
+biggest_of_two();
+factorial();
 }

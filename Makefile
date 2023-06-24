@@ -1,8 +1,10 @@
-ABC.exe : factorial.o biggestoftwo.o
-  gcc -o ABC.exe factorial.o biggestoftwo.o
+ABC.exe : main.o factorial.o biggestoftwo.o
+	gcc -o ABC.exe main.o factorial.o biggestoftwo.o
+main.o : main.c
+	gcc -c main.c
 factorial.o : factorial.c
-  gcc -c factorial.c
+	gcc -c factorial.c
 biggestoftwo.o : biggestoftwo.c
-  gcc -c biggestoftwo.c
+	gcc -c biggestoftwo.c
 clean : 
-  rm -rf *.o
+	rm -rf *.o *.exe
