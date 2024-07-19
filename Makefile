@@ -1,10 +1,12 @@
+c=gcc
+cflag=-c
 ABC.exe : main.o factorial.o biggestoftwo.o
-	gcc -o ABC.exe main.o factorial.o biggestoftwo.o
+	$(cc) -o $@ @< factorial.o biggestoftwo.o
 main.o : main.c
-	gcc -c main.c
+	$(cc) $(cflag) $<
 factorial.o : factorial.c
-	gcc -c factorial.c
+	$(cc) $(cflag) $<
 biggestoftwo.o : biggestoftwo.c
-	gcc -c biggestoftwo.c
+	$(cc) $(cflag) $<
 clean : 
 	rm -rf *.o *.exe
